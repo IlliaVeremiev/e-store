@@ -1,0 +1,118 @@
+<html>
+<head></head>
+<body>
+<div style="width:640px;margin:0 auto">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="padding:7px 0 10px">
+            <span style="font-size:11px;color:#999999;line-height:18px">Ваша заявка принята</span>
+        </div>
+        <div>
+            <div style="margin:0 auto;padding:0;width:185px;vertical-align:middle;text-align:center">
+                <a href="#">E-STORE</a>
+            </div>
+            <div>
+                <p>${order.firstName} ${order.lastName}, спасибо за ваш заказ!</p>
+                <span>Ваша заявка принята. Мы свяжемся с вами в ближайшее время для подтверждения заказа №${order.uid} или отправим информационное сообщение в Viber или SMS.</span>
+                <span>Вы можете отследить статус своего заказа в <a href="#">личном кабинете</a>.</span>
+            </div>
+            <div>
+                <div style="display:flex;justify-content: between;">
+                    <div>
+                        Заказ № ${order.uid}
+                    </div>
+                    <div>
+                        ${order.creationDate}
+                    </div>
+                </div>
+                <div style="display:flex;justify-content: between;">
+                    <div>
+                        Название и цена товарa
+                    </div>
+                    <div>
+                        Кол-во
+                    </div>
+                    <div>
+                        Сумма
+                    </div>
+                </div>
+                <#list items as item>
+                <div style="display:flex;justify-content: between;">
+                    <div>
+<!--                        <img src="{item.product.image.path}" alt="">-->
+                    </div>
+                    <div>
+                        <div>
+                            ${item.product.name}
+                        </div>
+                        <div style="display:flex;justify-content: between;">
+                            <div>
+                                ${item.price}
+                            </div>
+                            <div>
+                                ${item.count}
+                            </div>
+                            <div>
+                                ${item.totalPrice}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#list>
+            <div style="display:flex;justify-content: between;">
+                <div>
+                    Доставка
+                </div>
+                <div>
+                    <div>
+                        Самовывоз из Новой Почты
+                    </div>
+                    <div>
+                        Авдеевка Донецкая обл. Ясиноватский р-н, Отделение №2, проул. Коммунальщик 3
+                    </div>
+                </div>
+                <div>
+                    По тарифам перевозчика
+                </div>
+            </div>
+            <div>
+                <div>
+                    Оплата
+                </div>
+                <div>
+                    Наложенный платеж
+                </div>
+            </div>
+            <div>
+                <div>
+                    Покупатель
+                </div>
+                <div>
+                    ${order.firstName} ${order.lastName}, ${order.phoneNumber}
+                </div>
+            </div>
+            <div>
+                <div>
+                    Получатель
+                </div>
+                <div>
+                    ${order.firstName} ${order.lastName}, ${order.phoneNumber}
+                </div>
+            </div>
+            <div>
+                <div>
+                    Итого к оплате
+                </div>
+                <div>
+                    ${order.totalPrice}
+                </div>
+            </div>
+            <div>
+                <div>
+                    Интернет-магазин «E-STORE»
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

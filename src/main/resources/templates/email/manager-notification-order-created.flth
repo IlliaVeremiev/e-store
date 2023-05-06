@@ -1,0 +1,18 @@
+<html>
+<head></head>
+<body>
+    <p>Поулчен новый заказ <a href="http://localhost:5174/back-office/stores/site/orders/${order.id}">${orderNumber}</a></p>
+    <div>
+        <p>Покупатель</p>
+        <p>${order.firstName} ${order.lastName}</p>
+        <p>${order.phoneNumber}</p>
+        <p>${order.email}</p>
+    </div>
+    <#list items as item>
+        <div>
+            ${item.count} x ${item.price}
+            ${item.product.name}
+        </div>
+    </#list>
+</body>
+</html>

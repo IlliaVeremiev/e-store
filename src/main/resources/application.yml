@@ -1,0 +1,59 @@
+config:
+  contractor:
+    defaultCurrencyCode: USD
+server:
+  servlet:
+    session:
+      cookie:
+        same-site: strict
+spring:
+  banner:
+    location: classpath:/banner.txt
+  data:
+    web:
+      pageable:
+        default-page-size: 24
+        one-indexed-parameters: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    generate-ddl: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: ua.illia.estore.configuration.CustomPostgreSQLDialect
+        enable_lazy_load_no_trans: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        metadata_builder_contributor: ua.illia.estore.configuration.SqlFunctionsContributor
+  mvc:
+    static-path-pattern: /static
+    throw-exception-if-no-handler-found: true
+
+
+camunda:
+  bpm:
+    authorization:
+      enabled: true
+      enabled-for-custom-code: false
+    webapp:
+      index-redirect-enabled: false
+      session-cookie:
+        enable-secure-cookie: false
+    deployment-resource-pattern:
+      - classpath*:processes/**/*.bpmn
+      - classpath*:processes/**/*.form
+
+hibernate:
+  cache:
+    region:
+      factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+    use_second_level_cache: true

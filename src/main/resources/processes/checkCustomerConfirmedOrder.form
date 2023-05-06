@@ -1,0 +1,65 @@
+{
+  "components": [
+    {
+      "text": "=\"# Заказ № **\"+orderUid+\"**\"",
+      "type": "text",
+      "layout": {
+        "row": "Row_1jc2coj",
+        "columns": null
+      },
+      "id": "Field_0y6hy5a"
+    },
+    {
+      "text": "=\"<div>Получатель: \" + recipientFullName + \"</div>\" +\n\"Телефон: <a href=\\\"tel:\"+recipientPhoneNumber + \"\\\">\"+ recipientPhoneNumber +\"</a>\"",
+      "type": "text",
+      "layout": {
+        "row": "Row_0yqdu2o",
+        "columns": null
+      },
+      "id": "Field_1ba9773"
+    },
+    {
+      "values": [
+        {
+          "label": "Клиент ожидает отправки",
+          "value": "CUSTOMER_ACCEPTED"
+        },
+        {
+          "label": "Клиент отменил заказ",
+          "value": "CUSTOMER_CANCELLED"
+        },
+        {
+          "label": "Не удалось дозвониться",
+          "value": "CUSTOMER_NOT_ANSWERED"
+        }
+      ],
+      "type": "radio",
+      "layout": {
+        "row": "Row_0c05mlr",
+        "columns": null
+      },
+      "id": "Field_1px7nds",
+      "key": "customerCofirmationResponse",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "type": "text",
+      "layout": {
+        "row": "Row_0dj511r",
+        "columns": null
+      },
+      "id": "Field_1jhf16p"
+    }
+  ],
+  "type": "default",
+  "id": "checkCustomerConfirmedOrder",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.11.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 8
+}

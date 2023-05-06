@@ -1,0 +1,58 @@
+application:
+  cors:
+    allowedOrigins: >
+      https://localhost:5173,
+      https://localhost:5174
+  back-office:
+    url: https://localhost:5174
+
+camunda:
+  bpm:
+    admin-user:
+      id: demo
+      password: demo
+
+log4j:
+  logger:
+    org:
+      hibernate: all
+      hibernate.type: all
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  ssl:
+    enabled: true
+    key-alias: stackoverflow
+    key-store: classpath:keystore/identity.jks
+    key-store-password: 123456
+    key-store-type: PKCS12
+spring:
+  boot:
+    admin:
+      client:
+        instance:
+          prefer-ip: true
+        url: http://localhost:9090
+  camunda:
+    datasource:
+      jdbc-url: jdbc:postgresql://localhost:5432/camunda
+      password: camunda
+      username: camunda
+  datasource:
+    jdbc-url: jdbc:postgresql://localhost:5432/store
+    password: store
+    username: store
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+logging:
+  level:
+    ua.illia.estore: trace

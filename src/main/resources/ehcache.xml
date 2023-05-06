@@ -1,0 +1,3 @@
+<ehcache>
+    <cache name="category_classification_parameters"  maxElementsInMemory="1000" />
+</ehcache>
